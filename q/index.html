@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex">
+<title>PVN IT</title>
+<script>
+  /* ĐỔI DÒNG NÀY khi URL app thay đổi – tem QR không cần in lại */
+  var TARGET = 'https://script.google.com/macros/s/AKfycbyNW2Vcri81I8_vJo6kIdNhpB9wxaZwhCSSKAn-cmP62xCCLr624gxYU2WjlxHGLKS6/exec';
+
+  (function () {
+    var q = location.search || '';
+    // hỗ trợ cả dạng /q/PC-X51-316 (nếu sau này dùng)
+    var m = location.pathname.match(/\/q\/([^\/?#]+)/i);
+    if (!q && m) q = '?id=' + encodeURIComponent(decodeURIComponent(m[1]));
+    location.replace(TARGET + q);
+  })();
+</script>
+<style>body{font:15px system-ui,sans-serif;margin:40px 16px;text-align:center;color:#1b2430}a{color:#1f3a5f}</style>
+</head>
+<body>
+  <p>Đang mở thông tin thiết bị… / Opening device info…</p>
+  <p><a id="go" href="#">Bấm vào đây nếu không tự chuyển / Tap here if not redirected</a></p>
+  <script>document.getElementById('go').href = TARGET + (location.search || '');</script>
+</body>
+</html>
